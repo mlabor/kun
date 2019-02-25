@@ -246,8 +246,8 @@ module.exports = function (webpackEnv) {
         ".ts", ".tsx", ".js"
       ],
       // This allows you to set a fallback for where Webpack should look for modules.
-      // We placed these paths second because we want `node_modules` to "win" if
-      // there are any conflicts. This matches Node resolution mechanism.
+      // We placed these paths second because we want `node_modules` to "win" if there
+      // are any conflicts. This matches Node resolution mechanism.
       // https://github.com/facebook/create-react-app/issues/253
       modules: ['node_modules'].concat(
       // It is guaranteed to exist because we tweak it in `env.js`
@@ -299,10 +299,10 @@ module.exports = function (webpackEnv) {
         // JS.
         {
           test: /\.tsx?$/,
+          enforce: 'pre',
           loader: "ts-loader"
         }, {
           test: /\.(js|mjs|jsx)$/,
-          enforce: 'pre',
           use: [
             {
               options: {
@@ -401,8 +401,8 @@ module.exports = function (webpackEnv) {
                   : isEnvDevelopment
               }),
               // Don't consider CSS imports dead code even if the containing package claims to
-              // have no side effects. Remove this when webpack adds a warning or an error
-              // for this. See https://github.com/webpack/webpack/issues/6571
+              // have no side effects. Remove this when webpack adds a warning or an error for
+              // this. See https://github.com/webpack/webpack/issues/6571
               sideEffects: true
             },
             // Adds support for CSS Modules (https://github.com/css-modules/css-modules)
@@ -430,8 +430,8 @@ module.exports = function (webpackEnv) {
                   : isEnvDevelopment
               }, 'sass-loader'),
               // Don't consider CSS imports dead code even if the containing package claims to
-              // have no side effects. Remove this when webpack adds a warning or an error
-              // for this. See https://github.com/webpack/webpack/issues/6571
+              // have no side effects. Remove this when webpack adds a warning or an error for
+              // this. See https://github.com/webpack/webpack/issues/6571
               sideEffects: true
             },
             // Adds support for CSS Modules, but using SASS using the extension .module.scss
