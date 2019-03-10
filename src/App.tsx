@@ -1,16 +1,21 @@
-import * as React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import * as React from 'react'
+import logo from './logo.svg'
+import './App.css'
+import styled from 'styled-components'
 
+const Title = styled.h1`
+  font-size: 3rem;
+  color: red;
+`
 class App extends React.Component {
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p>
+          <Title>
             Edit <code>src/App.js</code> and save to reload.
-          </p>
+          </Title>
           <a
             className="App-link"
             href="https://reactjs.org"
@@ -21,8 +26,8 @@ class App extends React.Component {
           </a>
         </header>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
